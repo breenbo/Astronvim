@@ -17,6 +17,20 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- LSP - go next/prev error
+    ["<leader>ln"] = { function() vim.diagnostic.goto_next() end, desc = "Goto next error" },
+    ["<leader>lp"] = { function() vim.diagnostic.goto_prev() end, desc = "Goto previous error" },
+    -- FIND
+    ["<leader>ft"] = { "<cmd> TodoTelescope <CR>", desc = "Todos" },
+    -- change buffer
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
