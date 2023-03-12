@@ -20,6 +20,8 @@ return {
     -- LSP - go next/prev error
     ["<leader>ln"] = { function() vim.diagnostic.goto_next() end, desc = "Goto next error" },
     ["<leader>lp"] = { function() vim.diagnostic.goto_prev() end, desc = "Goto previous error" },
+    -- FIX eslint error
+    ["<leader>le"] = { ":!eslint_d --fix %<CR>", desc = "Fix ts linting" },
     -- FIND
     ["<leader>ft"] = { "<cmd> TodoTelescope <CR>", desc = "Todos" },
     -- change buffer

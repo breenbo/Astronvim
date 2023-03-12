@@ -34,12 +34,19 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
+          -- "vue",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- "sumneko_lua",
+        "volar",
       },
-      timeout_ms = 1000, -- default format timeout
+      filter = function(client)
+        if vim.bo.filetype == "vue" then return client.name == "null-ls" end
+        -- enable all other clients
+        return true
+      end,
+      -- timeout_ms = 5000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
