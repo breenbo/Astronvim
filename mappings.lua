@@ -33,6 +33,15 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
+    -- git navigation
+    ["<leader>gnh"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" },
+    ["<leader>gph"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" },
+    -- update package.json
+    ["<leader>j"] = { name = "JSON" },
+    ["<leader>jd"] = { function() require("package-info").delete() end, desc = "Delete package" },
+    ["<leader>ji"] = { function() require("package-info").update() end, desc = "Install package" },
+    ["<leader>ju"] = { function() require("package-info").update() end, desc = "Update package" },
+    ["<leader>jc"] = { function() require("package-info").update() end, desc = "Change package version" },
   },
   t = {
     -- setting a mapping to false will disable it
