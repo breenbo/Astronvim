@@ -9,7 +9,6 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
   { import = "astrocommunity.note-taking.neorg" },
-  { import = "astrocommunity.pack.tailwindcss" },
   {
     "neorg",
     opts = {
@@ -18,12 +17,19 @@ return {
           config = {
             workspaces = {
               homepad = "~/projects/homepad",
+              admin = "~/projects/homepad/admin",
+              contact = "~/projects/homepad/contact",
               documents = "~/projects/homepad/documents",
+              login = "~/projects/homepad/login",
+              tickets = "~/projects/homepad/tickets",
             },
+            default_workspace = "homepad",
           },
         },
       },
     },
   },
+  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.editing-support.nvim-regexplainer" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
