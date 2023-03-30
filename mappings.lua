@@ -80,6 +80,15 @@ return {
       function() require("neotest").jump.prev { status = "failed" } end,
       desc = "jump prev failed test",
     },
+    --
+    -- Neorg
+    --
+    ["<leader>n"] = { name = "Neorg" },
+    ["<leader>nm"] = { "<cmd>Neorg<CR>", desc = "Open general menu" },
+    ["<leader>ni"] = { "<cmd>Neorg index<CR>", desc = "Open Neorg index" },
+    ["<leader>nj"] = { "<cmd>Neorg journal today<CR>", desc = "Create new journal entry" },
+    ["<leader>nju"] = { "<cmd>Neorg journal toc update<CR>", desc = "Update journal toc" },
+    ["<leader>nq"] = { "<cmd>Neorg return<CR>", desc = "Quit Neorg" },
   },
   t = {
     -- setting a mapping to false will disable it
