@@ -6,9 +6,9 @@ return {
 
   { import = "astrocommunity.colorscheme.tokyonight" },
   { import = "astrocommunity.editing-support/todo-comments-nvim" },
-  { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
+  -- { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
   { import = "astrocommunity.note-taking.neorg" },
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   {
     "neorg",
     opts = {
@@ -29,7 +29,6 @@ return {
       },
     },
   },
-  { import = "astrocommunity.pack.tailwindcss" },
-  { import = "astrocommunity.editing-support.nvim-regexplainer" },
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.pack.tailwindcss" },
+  -- { import = "astrocommunity.editing-support.nvim-regexplainer" },
 }

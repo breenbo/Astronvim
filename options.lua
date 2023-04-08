@@ -21,13 +21,15 @@ return {
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
   },
+  -- chatgpt api key
+  env = { OPENAI_API_KEY = "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" },
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)
 --   local_vim.opt.relativenumber = true
---   local_vim.g.mapleader = " "
---   local_vim.opt.whichwrap = vim.opt.whichwrap - { 'b', 's' } -- removing option from list
---   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
---
+--   vim.diagnostic.config { virtual_text = false, virtual_lines = false }
+--   --
+--   local_vim.env = { OPENAI_API_KEY = "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" }
+--   --
 --   return local_vim
 -- end

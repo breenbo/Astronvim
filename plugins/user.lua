@@ -42,12 +42,33 @@ return {
           virtual_text = false,
         },
         summary = {
-          open = "botright vsplit | vertical resize 30",
+          open = "botright vsplit | vertical resize 40",
         },
       }
     end,
     ft = { "vue", "ts", "js" },
     dependencies = { "marilari88/neotest-vitest" },
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup {
+        keymaps = {
+          submit = "<C-s>",
+        },
+      }
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "User AstroFile",
+    requires = "nvim-lua/plenary.nvim",
   },
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
