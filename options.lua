@@ -23,7 +23,7 @@ return {
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
   },
   -- chatgpt api key
-  env = { OPENAI_API_KEY = "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" },
+  env = { OPENAI_API_KEY = "API_KEY" },
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)
