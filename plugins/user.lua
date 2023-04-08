@@ -6,7 +6,7 @@ return {
     config = function() require("lightspeed").setup {} end,
     event = "User AstroFile",
   },
-  { "tpope/vim-fugitive", lazy = false },
+  { "tpope/vim-fugitive",     lazy = false },
   {
     "nvim-neotest/neotest",
     requires = {
@@ -67,7 +67,7 @@ return {
   },
   {
     "sindrets/diffview.nvim",
-    event = "User AstroFile",
+    event = "VeryLazy",
     requires = "nvim-lua/plenary.nvim",
   },
   -- Add plugins, the lazy syntax

@@ -11,6 +11,7 @@ return {
     colorcolumn = "80",
     linebreak = true,
     textwidth = 80,
+    showtabline = 0,
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
