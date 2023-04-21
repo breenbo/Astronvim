@@ -17,11 +17,11 @@ return {
       ensure_installed = { "prettierd", "stylua", "eslint_d" },
     },
   },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = {
-      -- ensure_installed = { "python" },
-    },
-  },
+  -- {
+  --   "jay-babu/mason-nvim-dap.nvim",
+  -- overrides `require("mason-nvim-dap").setup(...)`
+  -- opts = {
+  -- ensure_installed = { "python" },
+  -- },
+  -- },
 }

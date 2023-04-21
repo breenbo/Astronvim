@@ -1,8 +1,7 @@
 {
   "startup": {
     "prefix": [
-      "test",
-      "describe"
+      "test"
     ],
     "body": [
       "import {describe, it, expect} from 'vitest'",
@@ -19,6 +18,17 @@
       "})"
     ],
     "description": "test startup"
+  },
+  "describe": {
+    "prefix": [
+      "describe"
+    ],
+    "body": [
+      "describe('$1', () => {",
+      "\t$2",
+      "})"
+    ],
+    "description": "simple describe"
   },
   "mount": {
     "prefix": [

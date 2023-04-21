@@ -90,9 +90,21 @@ return {
     ["<leader>njj"] = { "<cmd>Neorg journal today<CR>", desc = "Create new journal entry" },
     ["<leader>nju"] = { "<cmd>Neorg journal toc update<CR>", desc = "Update journal toc" },
     ["<leader>nq"] = { "<cmd>Neorg return<CR>", desc = "Quit Neorg" },
+    --
+    -- ChatGPT
+    --
+    ["<leader><space>"] = { name = "ChatGPT" },
+    ["<leader><space>o"] = { "<cmd>ChatGPT<CR>", desc = "Open ChatGPT" },
+    ["<leader><space>i"] = { "<cmd>ChatGPTEditWithInstructions<CR>", desc = "Edit code with instruction" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  v = {
+    --
+    -- ChatGPT
+    --
+    ["<leader>c"] = { "<cmd>ChatGPTEditWithInstructions<CR>", desc = "Edit code with ChatGPT" },
   },
 }

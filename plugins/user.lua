@@ -1,15 +1,39 @@
 return {
   -- You can also add new plugins here as well:
-  { "kylechui/nvim-surround", config = function() require("nvim-surround").setup {} end, event = "User AstroFile" },
+  --
+  --
+  {
+    "kylechui/nvim-surround",
+    config = function() require("nvim-surround").setup {} end,
+    event = "User AstroFile",
+  }, --
+  --
+  --
+  --
+  {
+    "vuki656/package-info.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    event = "BufRead package.json",
+    config = function() require("package-info").setup() end,
+  }, --
+  --
+  --
+  --
   {
     "ggandor/lightspeed.nvim",
     config = function() require("lightspeed").setup {} end,
     event = "User AstroFile",
-  },
-  { "tpope/vim-fugitive",     lazy = false },
+  }, --
+  --
+  --
+  --
+  { "tpope/vim-fugitive", lazy = false }, --
+  --
+  --
+  --
   {
     "nvim-neotest/neotest",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
@@ -32,43 +56,65 @@ return {
       require("neotest").setup {
         adapters = { require "neotest-vitest" },
         --
-        quickfix = {
-          open = false,
-          enabled = false,
-        },
-        status = {
-          enabled = true,
-          signs = true,
-          virtual_text = false,
-        },
-        summary = {
-          open = "botright vsplit | vertical resize 40",
-        },
+        quickfix = { open = false, enabled = false },
+        status = { enabled = true, signs = true, virtual_text = false },
+        summary = { open = "botright vsplit | vertical resize 40" },
       }
     end,
     ft = { "vue", "ts", "js" },
-    dependencies = { "marilari88/neotest-vitest" },
-  },
+  }, --
+  --
+  --
+  --
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup {
-        keymaps = {
-          submit = "<C-s>",
-        },
-      }
-    end,
+    config = function() require("chatgpt").setup { keymaps = { submit = "<C-s>" } } end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
-  },
+  }, --
+  --
+  --
+  --
   {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
-    requires = "nvim-lua/plenary.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+  }, --
+  --
+  --
+  --
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parser",
+    event = "VeryLazy",
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {}, -- adds icons
+          ["core.keybinds"] = {}, -- add default keybinds
+          ["core.completion"] = { config = { engine = "nvim-cmp" } }, -- add completion support
+          ["core.journal"] = {}, -- enable journal support
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                homepad = "~/projects/homepad",
+                admin = "~/projects/homepad/admin",
+                contact = "~/projects/homepad/contact",
+                documents = "~/projects/homepad/documents",
+                login = "~/projects/homepad/login",
+                tickets = "~/projects/homepad/tickets",
+              },
+              default_workspace = "homepad",
+            },
+          },
+        },
+      }
+    end,
   },
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
