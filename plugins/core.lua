@@ -15,25 +15,25 @@ return {
         "    ████   ██ ██    ██ ██ ████  ████",
         "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
         "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██"
+        "    ██   ████   ████   ██ ██      ██",
       }
       return opts
-    end
-  },   -- You can disable default plugins as follows:
-  { "jay-babu/mason-nvim-dap.nvim", enabled = false },
-  { "rcarriga/nvim-dap-ui",         enabled = false },
+    end,
+  }, -- You can disable default plugins as follows:
+  -- { "jay-babu/mason-nvim-dap.nvim", enabled = false },
+  -- { "rcarriga/nvim-dap-ui",         enabled = false },
   -- { "max397574/better-escape.nvim", enabled = false },
   --
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "plugins.configs.luasnip" (plugin, opts)      -- include the default astronvim config
+      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config
       require("luasnip.loaders.from_vscode").lazy_load {
-        paths = { "./lua/user/snippets" }
-      }       -- load snippets
-    end
-  }
+        paths = { "./lua/user/snippets" },
+      } -- load snippets
+    end,
+  },
   -- {
   --   "windwp/nvim-autopairs",
   --   config = function(plugin, opts)

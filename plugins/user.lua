@@ -69,7 +69,8 @@ return {
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
-    config = function() require("chatgpt").setup { keymaps = { submit = "<C-s>" } } end,
+    -- config = function() require("chatgpt").setup { keymaps = { submit = "<C-s>" } } end,
+    config = function() require("chatgpt").setup {} end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
@@ -87,6 +88,8 @@ return {
   --
   --
   --
+  --
+  --
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parser",
@@ -99,6 +102,8 @@ return {
           ["core.keybinds"] = {}, -- add default keybinds
           ["core.completion"] = { config = { engine = "nvim-cmp" } }, -- add completion support
           ["core.journal"] = {}, -- enable journal support
+          ["core.summary"] = {}, -- create workspaces summary from meta-datas
+          ["core.presenter"] = { config = { zen_mode = "zen-mode" } }, -- enable presenter support
           ["core.dirman"] = {
             config = {
               workspaces = {
@@ -108,6 +113,7 @@ return {
                 documents = "~/projects/homepad/documents",
                 login = "~/projects/homepad/login",
                 tickets = "~/projects/homepad/tickets",
+                php = "~/projects/php",
               },
               default_workspace = "homepad",
             },
